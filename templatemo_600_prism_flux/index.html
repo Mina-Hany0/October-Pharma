@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>October Pharma</title>
+    <link rel="stylesheet" href="123.css">
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-prism">
+                <div class="prism-face"></div>
+                <div class="prism-face"></div>
+                <div class="prism-face"></div>
+            </div>
+            <div class="loader-text">October Pharma...</div>
+        </div>
+    </div>
+
+    <section class="intro" id="intro">
+        <div class="intro-logo" aria-label="Logos">
+            <img class="intro-logo-image" src="images/logo-top.png" alt="Top logo" onerror="this.src='images/logo.png'">
+            <img class="intro-logo-image" src="images/logo-bottom.png" alt="Bottom logo" onerror="this.src='images/logo.png'">
+        </div>
+        <button class="intro-btn" type="button" onclick="scrollToSection('home')">Open Guidelines</button>
+    </section>
+
+    <section class="hero" id="home">
+        <div class="carousel-container">
+            <div class="carousel" id="carousel"></div>
+
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prevBtn" aria-label="Previous slide">&#8249;</button>
+                <button class="carousel-btn" id="nextBtn" aria-label="Next slide">&#8250;</button>
+            </div>
+
+            <div class="carousel-indicators" id="indicators"></div>
+        </div>
+    </section>
+
+    <script src="456.js"></script>
+</body>
+</html>
