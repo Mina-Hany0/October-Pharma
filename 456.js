@@ -220,5 +220,6 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         const loader = document.getElementById("loader");
         if (loader) loader.classList.add("hidden");
+        document.body.classList.add("site-ready");
     }, 1500);
 });
