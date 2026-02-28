@@ -36,11 +36,23 @@ const introBoxes = document.querySelectorAll(".intro-box");
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (!section) return;
+    const header = document.querySelector(".top-header");
+    const headerHeight = header ? header.offsetHeight : 0;
+    const targetY = section.getBoundingClientRect().top + window.pageYOffset - headerHeight + 72;
 
-    section.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+    window.scrollTo({
+        top: Math.max(0, targetY),
+        behavior: "smooth"
     });
+
+    // Mobile browsers can shift viewport height during smooth scroll; correct once after start.
+    setTimeout(() => {
+        const correctedY = section.getBoundingClientRect().top + window.pageYOffset - headerHeight + 72;
+        window.scrollTo({
+            top: Math.max(0, correctedY),
+            behavior: "smooth"
+        });
+    }, 320);
 }
 
 function openPdf(path) {
