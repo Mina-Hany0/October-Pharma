@@ -31,6 +31,7 @@ const carousel = document.getElementById("carousel");
 const indicatorsContainer = document.getElementById("indicators");
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
+const introBoxes = document.querySelectorAll(".intro-box");
 
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
@@ -215,6 +216,16 @@ window.addEventListener("resize", () => {
 });
 
 initCarousel();
+
+introBoxes.forEach((box) => {
+    box.addEventListener("click", () => scrollToSection("home"));
+    box.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            scrollToSection("home");
+        }
+    });
+});
 
 window.addEventListener("load", () => {
     setTimeout(() => {
